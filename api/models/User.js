@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+
 const { Schema, model } = mongoose;
 
 const UserSchema = new Schema({
@@ -8,8 +9,12 @@ const UserSchema = new Schema({
     unique: true,
     minlength: 4,
   },
+  password: {
+    type: String,
+    required: true,
+  },
 });
 
 const UserModel = model("User", UserSchema);
 
-module.exports = UserModel;
+export default UserModel;
